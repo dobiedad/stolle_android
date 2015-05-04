@@ -7,6 +7,7 @@ package uk.stolle;
         import android.view.View;
         import android.webkit.WebView;
         import android.webkit.WebViewClient;
+        import android.widget.ImageView;
         import android.widget.ProgressBar;
         import android.support.v7.app.ActionBarActivity;
         import android.os.Bundle;
@@ -47,6 +48,10 @@ public class MainActivity extends Activity {
             // TODO Auto-generated method stub
             super.onPageFinished(view, url);
             progressBar.setVisibility(View.GONE);
+            ImageView imgView = (ImageView)findViewById(R.id.logoImageView);
+
+            imgView.setVisibility(View.GONE);
+
         }
 
         @Override
@@ -69,6 +74,8 @@ public class MainActivity extends Activity {
         super.onResume();
         web.reload();
         progressBar.setVisibility(View.VISIBLE);
+        ImageView imgView = (ImageView)findViewById(R.id.logoImageView);
+        imgView.setVisibility(View.VISIBLE);
 
     }
     // To handle "Back" key press event for WebView to go back to previous screen.
