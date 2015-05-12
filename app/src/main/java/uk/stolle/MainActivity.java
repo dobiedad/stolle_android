@@ -3,22 +3,12 @@ package uk.stolle;
         import android.app.Activity;
         import android.graphics.Bitmap;
         import android.view.KeyEvent;
-        import android.view.Menu;
         import android.view.View;
         import android.webkit.WebView;
         import android.webkit.WebViewClient;
         import android.widget.ImageView;
         import android.widget.ProgressBar;
-        import android.support.v7.app.ActionBarActivity;
-        import android.os.Bundle;
 
-
-/*
- * Demo of creating an application to open any URL inside the application and clicking on any link from that URl
-should not open Native browser but  that URL should open in the same screen.
-
-- Load WebView with progress bar
- */
 public class MainActivity extends Activity {
 
     WebView web;
@@ -28,14 +18,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         web = (WebView) findViewById(R.id.webview1);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         web.setBackgroundColor(0x372726);
         web.setWebViewClient(new myWebClient());
         web.getSettings().setJavaScriptEnabled(true);
-        web.loadUrl("http://www.stolle.xyz.?app");
+        web.loadUrl("http://www.stolle.xyz/?app");
 
 
     }
@@ -78,7 +66,6 @@ public class MainActivity extends Activity {
         imgView.setVisibility(View.VISIBLE);
 
     }
-    // To handle "Back" key press event for WebView to go back to previous screen.
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // TODO Auto-generated method stub

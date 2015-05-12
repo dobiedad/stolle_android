@@ -18,7 +18,7 @@
         android:id="@+id/logoImageView"
         android:layout_width="wrap_content"
         android:layout_height="80dip"
-        android:src="@drawable/logo"
+        android:src="@mipmap/logo"
         android:layout_marginTop="0dip"
         android:gravity = "center_vertical|center_horizontal"
         android:layout_gravity="center" />
